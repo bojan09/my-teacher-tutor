@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Reveal from "@/components/animations/Reveal";
+
+import teacher_img from "../../../public/imgs/teacher_img.png";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden py-24 lg:py-32">
-      {/* Refined gradient for dark mode integration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-brand-mint),transparent_60%)] opacity-50 dark:opacity-20" />
 
       <div className="container mx-auto px-6 pl-10 lg:pl-16 grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -35,15 +37,20 @@ export default function Hero() {
           </Reveal>
         </div>
 
+        {/* IMAGE SECTION */}
         <Reveal direction="left" delay={0.4}>
           <div className="relative aspect-[4/5] w-full max-w-[450px] mx-auto lg:ml-auto">
+            {/* Background Decorative Frame */}
             <div className="absolute inset-0 bg-brand-mint translate-x-4 translate-y-4 rounded-2xl z-0" />
+
             <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-white/10 shadow-2xl z-10 bg-brand-mint/50 backdrop-blur-sm">
-              <div className="w-full h-full bg-gradient-to-br from-brand-mint/50 to-brand-slate/10 flex items-center justify-center">
-                <span className="text-foreground font-serif italic text-base text-center p-8 opacity-50">
-                  Teacher Headshot
-                </span>
-              </div>
+              <Image
+                src={teacher_img}
+                alt="Professional English Tutor"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </Reveal>
