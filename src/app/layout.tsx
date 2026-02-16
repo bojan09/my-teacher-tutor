@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden w-full antialiased`}
+      >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
           <main>{children}</main>

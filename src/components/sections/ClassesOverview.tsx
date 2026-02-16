@@ -28,14 +28,16 @@ const classes = [
 
 export default function ClassesOverview() {
   return (
-    <section className="py-24 bg-brand-mint/40 transition-colors duration-500">
+    <section className="py-24 bg-brand-mint/40 dark:bg-white/[0.02] transition-colors duration-500">
       <div className="container mx-auto px-6">
         <Reveal direction="up">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
+            {/* Academic Style: Semi-bold, tight tracking */}
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold tracking-tight text-foreground mb-4">
               Our Specialized Programs
             </h2>
-            <p className="text-brand-slate text-lg">
+            {/* Label Style: Wide tracking, uppercase sub-element if needed */}
+            <p className="text-brand-slate text-lg leading-relaxed">
               Every student is unique. We offer structured pathways tailored to
               different age groups and professional goals.
             </p>
@@ -47,19 +49,22 @@ export default function ClassesOverview() {
             {classes.map((cls, index) => (
               <div
                 key={index}
-                className="reveal-item p-8 rounded-2xl border border-white/50 dark:border-white/5 bg-white/90 dark:bg-white/[0.03] backdrop-blur-sm hover:border-brand-action/40 hover:shadow-2xl hover:shadow-brand-action/10 transition-all duration-300 group"
+                className="reveal-item p-8 rounded-2xl border border-white/50 dark:border-white/5 bg-white/90 dark:bg-white/[0.03] backdrop-blur-sm hover:border-brand-action/40 hover:shadow-2xl transition-all duration-300 group"
               >
                 <div className="mb-6 inline-block p-3 rounded-xl bg-brand-action/10 text-brand-action group-hover:bg-brand-action group-hover:text-white transition-colors duration-300">
                   {cls.icon}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                {/* Minimalist Bold Title */}
+                <h3 className="text-xl font-semibold tracking-tight text-foreground mb-3">
                   {cls.title}
                 </h3>
                 <p className="text-brand-slate leading-relaxed mb-6 text-sm">
                   {cls.description}
                 </p>
-                <button className="text-brand-action font-bold flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-300">
-                  Explore Course <span className="text-xl">→</span>
+
+                {/* Action Link: Wide tracking for the label */}
+                <button className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-action flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                  Explore Course <span className="text-lg">→</span>
                 </button>
               </div>
             ))}

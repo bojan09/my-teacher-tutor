@@ -6,31 +6,35 @@ import teacher_img from "../../../public/imgs/teacher_img.png";
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden py-24 lg:py-32">
+      {/* Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-brand-mint),transparent_60%)] opacity-50 dark:opacity-20" />
 
       <div className="container mx-auto px-6 pl-10 lg:pl-16 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="max-w-xl">
           <Reveal direction="up" cascade>
-            <div className="reveal-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-action/10 text-brand-action text-xs font-bold mb-6 border border-brand-action/20">
+            {/* Tag: Weight 700 (Bold), Wide tracking 0.2em, Uppercase */}
+            <div className="reveal-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-action/10 text-brand-action text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-brand-action/20">
               <span className="flex h-1.5 w-1.5 rounded-full bg-brand-action animate-pulse" />
               Expert Online English Tutoring
             </div>
 
-            <h1 className="reveal-item text-4xl lg:text-6xl font-serif text-foreground leading-tight mb-6">
+            {/* Headline: Weight 600 (Semi-Bold), Tracking-Tight */}
+            <h1 className="reveal-item text-4xl lg:text-6xl font-serif font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
               Empowering Your <br />
               <span className="text-brand-action italic">Future Fluency</span>
             </h1>
 
-            <p className="reveal-item text-base lg:text-lg text-brand-slate mb-8 leading-relaxed max-w-md">
+            <p className="reveal-item text-base lg:text-lg text-brand-slate mb-10 leading-relaxed max-w-md">
               Personalized 1-on-1 coaching designed to help professionals and
               students excel in a global world.
             </p>
 
             <div className="reveal-item flex flex-col sm:flex-row gap-4">
-              <button className="px-7 py-3.5 bg-brand-action text-white dark:text-brand-light rounded-lg font-bold hover:brightness-110 transition-all shadow-lg shadow-brand-action/20 active:scale-95 text-base">
+              {/* Buttons: Weight 600-700, tracking wide, reduced size for minimalism */}
+              <button className="px-7 py-4 bg-brand-action text-white dark:text-brand-light rounded-lg font-bold uppercase tracking-widest text-[11px] hover:brightness-110 transition-all shadow-lg shadow-brand-action/20 active:scale-95">
                 Book a Free Trial
               </button>
-              <button className="px-7 py-3.5 border border-foreground/20 text-foreground rounded-lg font-bold hover:bg-foreground hover:text-background transition-all active:scale-95 text-base">
+              <button className="px-7 py-4 border border-foreground/20 text-foreground rounded-lg font-bold uppercase tracking-widest text-[11px] hover:bg-foreground hover:text-background transition-all active:scale-95">
                 Browse Classes
               </button>
             </div>
