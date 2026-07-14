@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 
@@ -21,15 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden w-full antialiased`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Navbar />
-          <main>{children}</main>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden w-full antialiased`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <Navbar />
+            <main>{children}</main>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
