@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     quote:
-      "As a non-native speaker in tech, I lacked the &apos;professional voice&apos; needed for leadership. These lessons gave me the vocabulary and the confidence.",
+      "As a non-native speaker in tech, I lacked the 'professional voice' needed for leadership. These lessons gave me the vocabulary and the confidence.",
     author: "Sarah Jenkins",
     role: "Senior Developer",
     tag: "Professional Fluency",

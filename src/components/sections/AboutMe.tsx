@@ -31,8 +31,8 @@ export default function AboutMe() {
                   Hello! I&apos;m Jane, a dedicated English language coach
                   specializing in helping non-native speakers navigate the
                   complexities of global communication. My journey started in
-                  [Your Origin], and over the last decade, I&apos;ve had the
-                  privilege of teaching students from over 30 countries.
+                  Lisbon, Portugal, and over the last decade, I&apos;ve had
+                  the privilege of teaching students from over 30 countries.
                 </p>
                 <p>
                   I don&apos;t just teach grammar; I teach{" "}
@@ -91,14 +91,11 @@ export default function AboutMe() {
                 </div>
 
                 <div className="mt-10 pt-8 border-t border-border">
-                  <p className="text-xs italic text-brand-slate leading-relaxed mb-6">
+                  <p className="text-xs italic text-brand-slate leading-relaxed">
                     &quot;My mission is to eliminate the &apos;language
                     barrier&apos; and help you unlock global opportunities
                     through precise communication.&quot;
                   </p>
-                  <button className="w-full py-4 bg-foreground text-background rounded-lg font-bold uppercase tracking-widest text-[10px] hover:opacity-90 transition-opacity">
-                    View Full Resume
-                  </button>
                 </div>
               </div>
             </Reveal>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/animations/Reveal";
 import { BookOpen, Users, GraduationCap, School } from "lucide-react";
 
@@ -63,9 +64,12 @@ export default function ClassesOverview() {
                 </p>
 
                 {/* Action Link: Wide tracking for the label */}
-                <button className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-action flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                <Link
+                  href="/sign-up"
+                  className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-action flex items-center gap-2 group-hover:translate-x-1 transition-transform"
+                >
                   Explore Course <span className="text-lg">→</span>
-                </button>
+                </Link>
               </div>
             ))}
           </div>

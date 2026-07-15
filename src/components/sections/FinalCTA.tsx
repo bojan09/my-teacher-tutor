@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/animations/Reveal";
 
 export default function FinalCTA() {
@@ -24,12 +25,12 @@ export default function FinalCTA() {
                 your level, and build your personalized learning roadmap.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button className="px-10 py-4 bg-brand-action text-white rounded-lg font-bold uppercase tracking-widest text-[11px] hover:brightness-110 transition-all shadow-xl shadow-black/20">
-                  Book Free Consultation
-                </button>
-                <button className="px-10 py-4 border border-white/20 text-white rounded-lg font-bold uppercase tracking-widest text-[11px] hover:bg-white hover:text-brand-deep transition-all">
-                  View Pricing
-                </button>
+                <Link
+                  href="/sign-up"
+                  className="px-10 py-4 bg-brand-action text-brand-action-foreground rounded-lg font-bold uppercase tracking-widest text-[11px] hover:brightness-110 transition-all shadow-xl shadow-black/20"
+                >
+                  Start Learning Free
+                </Link>
               </div>
             </Reveal>
           </div>

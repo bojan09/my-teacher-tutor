@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Sun, Moon, GraduationCap, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
@@ -30,12 +31,12 @@ export default function Navbar() {
 
   if (!mounted) return <div className="h-20" aria-hidden="true" />;
 
+  // Every link here points at a section that actually exists on the page
+  // (in-page anchors) or a real route (/sign-in). No links to unbuilt pages.
   const navLinks = [
-    { name: "Courses", href: "/courses" },
-    { name: "Methodology", href: "/methodology" },
-    { name: "About Me", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Resources", href: "/blog" },
+    { name: "About", href: "#about" },
+    { name: "Methodology", href: "#methodology" },
+    { name: "Testimonials", href: "#testimonials" },
   ];
 
   return (
@@ -48,13 +49,11 @@ export default function Navbar() {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 font-serif text-2xl font-bold text-foreground z-50"
+            className="text-foreground z-50"
           >
-            <GraduationCap className="w-8 h-8 text-brand-action" />
-            <span>FluentEdge</span>
+            <Logo />
           </Link>
 
           {/* Desktop Links */}
@@ -77,16 +76,26 @@ export default function Navbar() {
               className="p-2 rounded-lg bg-foreground/5 hover:bg-foreground/10 text-foreground transition-colors z-50"
             >
               {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
+                <Sun className="w-5 h-5 text-brand-action" />
               ) : (
                 <Moon className="w-5 h-5" />
               )}
             </button>
 
+            <Link
+              href="/sign-in"
+              className="hidden sm:block text-sm font-medium text-foreground/80 hover:text-brand-action transition-colors"
+            >
+              Sign In
+            </Link>
+
             {/* Desktop CTA */}
-            <button className="hidden sm:block px-5 py-2.5 bg-brand-action text-white dark:text-brand-light rounded-lg font-bold hover:brightness-110 shadow-md">
-              Book a Class
-            </button>
+            <Link
+              href="/sign-up"
+              className="hidden sm:block px-5 py-2.5 bg-brand-action text-brand-action-foreground rounded-lg font-bold hover:brightness-110 shadow-md"
+            >
+              Start Learning
+            </Link>
 
             {/* Mobile Hamburger Button */}
             <button
@@ -109,7 +118,7 @@ export default function Navbar() {
           mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-serif">
+        <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-bold">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -120,9 +129,20 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button className="mt-4 px-8 py-4 bg-brand-action text-white rounded-xl font-bold text-lg">
-            Book a Class
-          </button>
+          <Link
+            href="/sign-in"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-foreground hover:text-brand-action transition-colors"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="/sign-up"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-4 px-8 py-4 bg-brand-action text-brand-action-foreground rounded-xl font-bold text-lg"
+          >
+            Start Learning
+          </Link>
         </div>
       </div>
     </>

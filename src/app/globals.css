@@ -8,46 +8,57 @@
   --color-brand-deep: var(--brand-deep);
   --color-brand-light: var(--brand-light);
   --color-brand-action: var(--brand-action);
+  --color-brand-action-foreground: var(--brand-action-foreground);
   --color-brand-slate: var(--brand-slate);
   --color-brand-mint: var(--brand-mint);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-border: var(--border);
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  --font-serif: var(--font-roboto);
+  --font-sans: var(--font-roboto);
 }
 
 :root {
-  /* LIGHT MODE - Pearl & Mist */
-  --brand-deep: #0f4c5c;
-  --brand-light: #f0f4f4;
-  --brand-mint: #e2e9e9;
-  --brand-action: #3b82f6;
-  --brand-slate: #475569;
+  /* Constants: always ink-dark / always paper-light, regardless of theme.
+     Used for elements (like the dashboard "continue" card) that are
+     intentionally a fixed dark surface in both light and dark mode. */
+  --ink: #101425;
+  --paper: #f7f8fa;
+
+  /* LIGHT MODE - Ink & Amber */
+  --brand-deep: #101425;
+  --brand-light: #f7f8fa;
+  --brand-mint: #eceef2;
+  --brand-action: #f4b740;
+  --brand-action-foreground: #101425;
+  --brand-slate: #4b5160;
 
   --background: var(--brand-light);
   --foreground: var(--brand-deep);
   --primary: var(--brand-deep);
   --primary-foreground: #ffffff;
-  --border: #d1dbdb;
+  --border: #e3e6ea;
   --radius: 0.75rem;
 }
 
-/* DARK MODE - Sophisticated Charcoal */
+/* DARK MODE - Ink & Amber (inverted) */
 .dark {
-  --brand-deep: #f1f5f9; /* Soft off-white for text */
-  --brand-light: #0b1215; /* Deep charcoal/navy base */
-  --brand-mint: #161d21; /* Elevated section background */
-  --brand-action: #60a5fa; /* Desaturated blue for better readability */
-  --brand-slate: #94a3b8; /* Muted secondary text */
+  --brand-deep: #f7f8fa; /* Off-white text on dark surfaces */
+  --brand-light: #0b0e1a; /* Near-black ink base */
+  --brand-mint: #161b2e; /* Elevated dark surface */
+  --brand-action: #f4b740; /* Amber stays constant across modes */
+  --brand-action-foreground: #101425; /* Always dark ink on amber, for contrast */
+  --brand-slate: #a7adbb;
 
   --background: var(--brand-light);
   --foreground: var(--brand-deep);
   --primary: var(--brand-action);
-  --primary-foreground: #0b1215;
-  --border: #242c31; /* Subtle dark borders */
+  --primary-foreground: #101425;
+  --border: #262b3d;
 }
 
 @layer base {

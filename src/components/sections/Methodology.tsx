@@ -42,14 +42,11 @@ export default function Methodology() {
               <h2 className="text-4xl font-serif font-semibold tracking-tight text-foreground mb-6 leading-tight">
                 Beyond Standard <br /> Teaching
               </h2>
-              <p className="text-brand-slate leading-relaxed mb-8">
-                I believe fluency isn`&apos;`t about how many words you know,
+              <p className="text-brand-slate leading-relaxed">
+                I believe fluency isn&apos;t about how many words you know,
                 but how effectively you can use them. My methodology is rooted
                 in three core pillars.
               </p>
-              <button className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground border-b-2 border-brand-action pb-1 hover:text-brand-action transition-colors">
-                Deep Dive into My Method
-              </button>
             </Reveal>
           </div>
 
